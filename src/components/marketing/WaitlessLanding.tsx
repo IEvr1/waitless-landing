@@ -1,5 +1,7 @@
 import type { Lang } from "@/lib/types";
 import { t } from "@/lib/i18n";
+import { LandingHeroReveal } from "@/components/marketing/LandingHeroReveal";
+import { LandingMetricsStrip } from "@/components/marketing/LandingMetricsStrip";
 import { LandingSection } from "@/components/marketing/LandingSection";
 import { TrafficLevelLegend } from "@/components/marketing/TrafficLevelLegend";
 
@@ -27,20 +29,27 @@ function PillarCard({
   return (
     <a
       href={href}
-      className="group flex flex-col rounded-2xl border border-border bg-surface p-6 shadow-sm transition hover:border-primary/40 hover:shadow-md"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface p-6 pt-7 shadow-sm ring-1 ring-emerald-950/[0.04] transition duration-200 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-lg hover:shadow-emerald-950/10 motion-reduce:transform-none dark:ring-white/[0.06]"
     >
+      <span
+        className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-primary via-accent to-primary opacity-90"
+        aria-hidden
+      />
       <h3 className="text-lg font-semibold tracking-tight text-foreground">
         {title}
       </h3>
       <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
-      <span className="mt-4 text-sm font-medium text-primary group-hover:underline">
+      <span className="mt-4 text-sm font-semibold text-primary group-hover:underline">
         {learnMore}
       </span>
     </a>
   );
 }
+
+const heroPanelClass =
+  "relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-950 via-teal-950 to-[#021a14] px-6 py-14 text-hero-fg shadow-2xl shadow-emerald-950/40 ring-1 ring-emerald-400/15 sm:px-10 sm:py-16 lg:px-14 lg:py-20";
 
 export function WaitlessLanding({
   lang,
@@ -73,58 +82,80 @@ export function WaitlessLanding({
     <div className="pb-8 sm:pb-12">
       <section
         aria-labelledby="hero-heading"
-        className="relative overflow-hidden rounded-3xl bg-hero-bg px-6 py-14 text-hero-fg shadow-2xl shadow-zinc-900/20 ring-1 ring-white/10 sm:px-10 sm:py-16 lg:px-14 lg:py-20"
+        className={heroPanelClass}
       >
         <div
-          className="pointer-events-none absolute -right-20 top-0 size-[28rem] rounded-full bg-[radial-gradient(circle_at_center,var(--hero-accent),transparent_65%)] blur-2xl"
+          className="pointer-events-none absolute -right-20 top-0 size-[28rem] rounded-full bg-[radial-gradient(circle_at_center,rgb(190_242_100_/_0.14),transparent_62%)] blur-2xl"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-32 -left-24 size-96 rounded-full bg-emerald-500/10 blur-3xl"
+          className="pointer-events-none absolute -bottom-32 -left-24 size-96 rounded-full bg-emerald-500/15 blur-3xl"
           aria-hidden
         />
-        <div className="relative mx-auto max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-hero-muted">
-            {t("waitless.heroEyebrow", lang)}
-          </p>
-          <h1
-            id="hero-heading"
-            className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
-          >
-            {t("waitless.heroHeadline", lang)}
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-300 sm:text-xl">
-            {t("app.tagline", lang)}
-          </p>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-hero-muted">
-            {t("waitless.heroLead", lang)}
-          </p>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">
-            {t("waitless.heroSub", lang)}
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
-              href={demoShopUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-center text-sm font-semibold text-zinc-950 shadow-lg transition hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-hero-bg"
+        <LandingHeroReveal>
+          <div className="relative mx-auto max-w-4xl">
+            <p
+              data-hero-reveal
+              className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/90"
             >
-              {t("waitless.ctaDemo", lang)}
-            </a>
-            <a
-              href="#pelatis"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-hero-bg"
+              {t("waitless.heroEyebrow", lang)}
+            </p>
+            <h1
+              id="hero-heading"
+              data-hero-reveal
+              className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
             >
-              {t("waitless.ctaExplore", lang)}
-            </a>
+              {t("waitless.heroHeadline", lang)}
+            </h1>
+            <p
+              data-hero-reveal
+              className="mt-5 max-w-2xl text-lg leading-relaxed text-emerald-50/95 sm:text-xl"
+            >
+              {t("app.tagline", lang)}
+            </p>
+            <p
+              data-hero-reveal
+              className="mt-4 max-w-2xl text-base leading-relaxed text-emerald-100/85"
+            >
+              {t("waitless.heroLead", lang)}
+            </p>
+            <p
+              data-hero-reveal
+              className="mt-3 max-w-2xl text-sm leading-relaxed text-emerald-200/75"
+            >
+              {t("waitless.heroSub", lang)}
+            </p>
+            <div
+              data-hero-reveal
+              className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+            >
+              <a
+                href={demoShopUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-center text-sm font-semibold text-accent-foreground shadow-lg shadow-lime-950/25 transition hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950"
+              >
+                {t("waitless.ctaDemo", lang)}
+              </a>
+              <a
+                href="#pelatis"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-emerald-200/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950"
+              >
+                {t("waitless.ctaExplore", lang)}
+              </a>
+            </div>
+            <LandingMetricsStrip lang={lang} />
+            <p
+              data-hero-reveal
+              className="mt-10 max-w-2xl border-t border-white/10 pt-8 text-sm leading-relaxed text-emerald-100/80"
+            >
+              {t("waitless.ownerNote", lang)}
+            </p>
           </div>
-          <p className="mt-10 max-w-2xl border-t border-white/10 pt-8 text-sm leading-relaxed text-hero-muted">
-            {t("waitless.ownerNote", lang)}
-          </p>
-        </div>
+        </LandingHeroReveal>
       </section>
 
-      <div className="mt-12 grid gap-4 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+      <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         <PillarCard
           title={t("waitless.sectionCustomer", lang)}
           description={t("waitless.pillarCustomerBlurb", lang)}
@@ -145,7 +176,7 @@ export function WaitlessLanding({
         />
       </div>
 
-      <div className="mx-auto mt-6 max-w-3xl lg:max-w-none">
+      <div className="mx-auto mt-8 max-w-3xl lg:max-w-none">
         <LandingSection id="pelatis" title={t("waitless.sectionCustomer", lang)}>
           <p className="text-base leading-relaxed text-muted-foreground">
             {t("waitless.customerIntro", lang)}
@@ -188,15 +219,15 @@ export function WaitlessLanding({
 
         <section
           aria-labelledby="cta-footer-heading"
-          className="mt-16 rounded-3xl bg-hero-bg px-6 py-12 text-center text-hero-fg ring-1 ring-white/10 sm:px-10 sm:py-14"
+          className={`${heroPanelClass} mt-16 px-6 py-12 text-center sm:px-10 sm:py-14`}
         >
           <h2
             id="cta-footer-heading"
-            className="text-2xl font-semibold tracking-tight sm:text-3xl"
+            className="text-2xl font-semibold tracking-tight text-white sm:text-3xl"
           >
             {t("waitless.heroHeadline", lang)}
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-hero-muted">
+          <p className="mx-auto mt-3 max-w-lg text-sm text-emerald-100/85">
             {t("waitless.heroSub", lang)}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -204,13 +235,13 @@ export function WaitlessLanding({
               href={demoShopUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-hero-bg sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950 sm:w-auto"
             >
               {t("waitless.ctaDemo", lang)}
             </a>
             <a
               href="#pelatis"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/25 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-hero-bg sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border border-white/25 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-950 sm:w-auto"
             >
               {t("waitless.ctaExplore", lang)}
             </a>

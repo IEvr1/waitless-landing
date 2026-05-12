@@ -15,8 +15,8 @@ export function TrafficLevelLegend({
   caption: string;
 }) {
   return (
-    <div className="mt-6 rounded-2xl border border-border bg-surface-muted/80 p-4 dark:bg-surface-muted/50">
-      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+    <div className="mt-6 rounded-2xl border border-primary/20 bg-surface-muted/90 p-4 ring-1 ring-primary/10 dark:border-primary/30 dark:bg-surface-muted/50">
+      <p className="text-xs font-bold uppercase tracking-widest text-primary">
         {caption}
       </p>
       <ul className="mt-3 space-y-2">

@@ -1,22 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f4f5;
-  --foreground: #18181b;
+  --background: #f4f7f5;
+  --foreground: #0f172a;
   --surface: #ffffff;
-  --surface-muted: #f4f4f5;
-  --border: #e4e4e7;
-  --muted-foreground: #52525b;
-  --primary: #059669;
-  --primary-hover: #047857;
+  --surface-muted: #ecfdf5;
+  --border: #d1fae5;
+  --muted-foreground: #475569;
+  --primary: #047857;
+  --primary-hover: #065f46;
   --primary-foreground: #ffffff;
   --ring: #10b981;
-  --hero-bg: #09090b;
+  --accent: #d9f99d;
+  --accent-hover: #bef264;
+  --accent-foreground: #14532d;
+  --hero-bg: #052e16;
+  --hero-bg-mid: #064e3b;
+  --hero-bg-end: #022c22;
   --hero-fg: #fafafa;
-  --hero-muted: #a1a1aa;
-  --hero-accent: rgb(52 211 153 / 0.15);
-  --bg-glow: rgb(24 24 27 / 0.06);
-  --bg-glow-2: rgb(16 185 129 / 0.06);
+  --hero-muted: #a7f3d0;
+  --hero-accent: rgb(190 242 100 / 0.12);
+  --bg-glow: rgb(16 185 129 / 0.08);
+  --bg-glow-2: rgb(190 242 100 / 0.06);
 }
 
 @theme inline {
@@ -30,6 +35,9 @@
   --color-primary-hover: var(--primary-hover);
   --color-primary-foreground: var(--primary-foreground);
   --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
   --color-hero-bg: var(--hero-bg);
   --color-hero-fg: var(--hero-fg);
   --color-hero-muted: var(--hero-muted);
@@ -39,22 +47,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --surface: #18181b;
-    --surface-muted: #27272a;
-    --border: #3f3f46;
-    --muted-foreground: #a1a1aa;
+    --background: #030806;
+    --foreground: #ecfdf5;
+    --surface: #0c1914;
+    --surface-muted: #052e16;
+    --border: #14532d;
+    --muted-foreground: #94a3b8;
     --primary: #34d399;
     --primary-hover: #6ee7b7;
     --primary-foreground: #052e16;
-    --ring: #34d399;
-    --hero-bg: #050507;
-    --hero-fg: #fafafa;
-    --hero-muted: #a1a1aa;
-    --hero-accent: rgb(52 211 153 / 0.12);
-    --bg-glow: rgb(63 63 70 / 0.25);
-    --bg-glow-2: rgb(52 211 153 / 0.05);
+    --ring: #4ade80;
+    --accent: #d9f99d;
+    --accent-hover: #ecfccb;
+    --accent-foreground: #14532d;
+    --hero-bg: #022c22;
+    --hero-bg-mid: #064e3b;
+    --hero-bg-end: #010f0a;
+    --hero-fg: #f8fafc;
+    --hero-muted: #86efac;
+    --hero-accent: rgb(190 242 100 / 0.1);
+    --bg-glow: rgb(52 211 153 / 0.08);
+    --bg-glow-2: rgb(190 242 100 / 0.04);
   }
 }
 
@@ -66,6 +79,8 @@ body {
     radial-gradient(ellipse 60% 45% at 100% 0%, var(--bg-glow-2), transparent 50%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.011em;
 }
 
 ::selection {

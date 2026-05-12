@@ -28,7 +28,7 @@ export function LanguageSwitcher({ lang }: { lang: Lang }) {
         onClick={() => setLang("el")}
         className={`rounded-full px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
           lang === "el"
-            ? "bg-primary text-primary-foreground shadow-sm"
+            ? "bg-accent text-accent-foreground shadow-sm"
             : "text-muted-foreground hover:bg-surface hover:text-foreground"
         }`}
       >
@@ -39,7 +39,7 @@ export function LanguageSwitcher({ lang }: { lang: Lang }) {
         onClick={() => setLang("en")}
         className={`rounded-full px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
           lang === "en"
-            ? "bg-primary text-primary-foreground shadow-sm"
+            ? "bg-accent text-accent-foreground shadow-sm"
             : "text-muted-foreground hover:bg-surface hover:text-foreground"
         }`}
       >
