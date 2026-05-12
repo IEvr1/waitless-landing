@@ -4,11 +4,15 @@ export function LandingSection({
   id,
   title,
   children,
+  wide,
 }: {
   id: string;
   title: string;
   children: ReactNode;
+  /** Wider content column (e.g. pricing grids). */
+  wide?: boolean;
 }) {
+  const contentMax = wide ? "max-w-6xl" : "max-w-3xl";
   return (
     <section
       id={id}
@@ -17,7 +21,7 @@ export function LandingSection({
       <h2 className="max-w-3xl text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
         {title}
       </h2>
-      <div className="mt-6 max-w-3xl">{children}</div>
+      <div className={`mt-6 ${contentMax}`}>{children}</div>
     </section>
   );
 }

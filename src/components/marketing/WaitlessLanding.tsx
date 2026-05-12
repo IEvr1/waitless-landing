@@ -155,7 +155,7 @@ export function WaitlessLanding({
         </LandingHeroReveal>
       </section>
 
-      <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+      <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
         <PillarCard
           title={t("waitless.sectionCustomer", lang)}
           description={t("waitless.pillarCustomerBlurb", lang)}
@@ -172,6 +172,12 @@ export function WaitlessLanding({
           title={t("waitless.sectionWhyNot", lang)}
           description={t("waitless.pillarWhyBlurb", lang)}
           href="#giati-oxi-booking"
+          learnMore={t("waitless.learnMore", lang)}
+        />
+        <PillarCard
+          title={t("waitless.sectionPricing", lang)}
+          description={t("waitless.pillarPricingBlurb", lang)}
+          href="#timologisi"
           learnMore={t("waitless.learnMore", lang)}
         />
       </div>
@@ -215,6 +221,47 @@ export function WaitlessLanding({
             <li>{t("waitless.smart.p1", lang)}</li>
             <li>{t("waitless.smart.p2", lang)}</li>
           </ul>
+        </LandingSection>
+
+        <LandingSection id="timologisi" title={t("waitless.sectionPricing", lang)} wide>
+          <p className="text-base leading-relaxed text-muted-foreground">
+            {t("waitless.pricingIntro", lang)}
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm ring-1 ring-emerald-950/[0.04] dark:ring-white/[0.06]">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                {t("waitless.pricingOneTimeTitle", lang)}
+              </p>
+              <p className="mt-3 text-3xl font-bold tabular-nums tracking-tight text-foreground">
+                {t("waitless.pricingOneTimeAmount", lang)}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {t("waitless.pricingOneTimeDesc", lang)}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm ring-1 ring-emerald-950/[0.04] dark:ring-white/[0.06]">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                {t("waitless.pricingMonthlyTitle", lang)}
+              </p>
+              <p className="mt-3 text-3xl font-bold tabular-nums tracking-tight text-foreground">
+                {t("waitless.pricingMonthlyAmount", lang)}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {t("waitless.pricingMonthlyDesc", lang)}
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-surface-muted/80 p-6 shadow-md ring-1 ring-primary/15 sm:col-span-2 lg:col-span-1">
+              <span className="absolute right-4 top-4 rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold text-accent-foreground">
+                {t("waitless.pricingAnnualBadge", lang)}
+              </span>
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                {t("waitless.pricingAnnualTitle", lang)}
+              </p>
+              <p className="mt-6 pr-16 text-sm leading-relaxed text-muted-foreground">
+                {t("waitless.pricingAnnualDesc", lang)}
+              </p>
+            </div>
+          </div>
         </LandingSection>
 
         <section
