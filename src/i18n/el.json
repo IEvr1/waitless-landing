@@ -30,9 +30,9 @@
   "waitless.pillarOwnerBlurb": "Ιδιωτικός πίνακας — ένα πάτημα για ενημέρωση κίνησης για walk-in.",
   "waitless.pillarWhyBlurb": "Σαφήνεια για walk-in χωρίς «κλειδωμένα» ραντεβού.",
   "waitless.pillarPricingBlurb": "30 € εγκατάσταση, 25 €/μήνα ή έκπτωση 10% στη συνδρομή με ετήσια προεξόφληση.",
-  "waitless.heroSub": "Δεν είναι σύστημα ραντεβού: εδώ δεν διαλέγεις ώρα. Απλά βλέπεις την πραγματική εικόνα πριν ξεκινήσεις για το κατάστημα.",
+  "waitless.heroSub": "Δεν είναι σύστημα ραντεβού: Απλά βλέπεις την πραγματική εικόνα πριν ξεκινήσεις για το κατάστημα.",
   "waitless.ctaDemo": "Δες demo κατάστημα",
-  "waitless.ownerNote": "Ο πίνακας ιδιοκτήτη ανοίγει με ιδιωτικό, ασφαλή σύνδεσμο — όχι με «δημόσιο» login για πελάτες. Χρησιμοποιήστε τον σύνδεσμο που σάς έχει δοθεί· δεν δημοσιεύεται εδώ.",
+  "waitless.ownerNote": "",
   "waitless.sectionCustomer": "Για τον πελάτη",
   "waitless.customerIntro": "Κάθε κατάστημα έχει δημόσια σελίδα (π.χ. /shop/όνομα-καταστήματος). Εκεί θα βρεις:",
   "waitless.customer.b1": "Ζωντανή κίνηση / αναμονή με 4 σαφή επίπεδα (χρωματικά): περίπου 0–10 λεπτά, 10–20, 20–40, 45+ λεπτά, με απλά κείμενα («άμεσα», «μικρή αναμονή», κ.λπ.).",
@@ -72,9 +72,9 @@
   "waitless.pricingMonthlyTitle": "Μηνιαία συνδρομή",
   "waitless.pricingMonthlyAmount": "25 € / μήνα",
   "waitless.pricingMonthlyDesc": "Χρέωση ανά μήνα ανά κατάστημα.",
-  "waitless.pricingAnnualTitle": "Ετήσια δέσμευση",
+  "waitless.pricingAnnualTitle": "Ετήσια συνδρομή",
   "waitless.pricingAnnualBadge": "Έκπτωση 10%",
-  "waitless.pricingAnnualDesc": "Με ετήσια προεξόφληση ισχύει έκπτωση 10% στη συνδρομή: 270 € / έτος αντί για 300 € (25 € × 12 μήνες). Τα 30 € εγκατάστασης χρεώνονται χωριστά, εφάπαξ.",
-  "waitless.footerTagline": "Ζωντανή κατάσταση για κουρεία & κομμωτήρια",
-  "waitless.footerTech": "Φτιαγμένο με Next.js και Supabase (Postgres), έτοιμο για Vercel — τα κλειδιά υπηρεσιών μένουν στον server, όχι στον browser."
+  "waitless.pricingAnnualAmount": "270 € / έτος",
+  "waitless.pricingAnnualDesc": "",
+  "waitless.footerTagline": "Ζωντανή κατάσταση για κουρεία & κομμωτήρια"
 }

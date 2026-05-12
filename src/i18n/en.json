@@ -72,9 +72,9 @@
   "waitless.pricingMonthlyTitle": "Monthly subscription",
   "waitless.pricingMonthlyAmount": "€25 / month",
   "waitless.pricingMonthlyDesc": "Billed monthly per shop.",
-  "waitless.pricingAnnualTitle": "Annual commitment",
+  "waitless.pricingAnnualTitle": "Annual subscription",
   "waitless.pricingAnnualBadge": "10% off",
-  "waitless.pricingAnnualDesc": "With annual prepayment you get 10% off the subscription: €270 / year instead of €300 (€25 × 12). The €30 installation is separate and still charged once.",
-  "waitless.footerTagline": "Live traffic for barbers & salons",
-  "waitless.footerTech": "Built with Next.js and Supabase (Postgres), ready for Vercel — service keys stay on the server, not in the browser."
+  "waitless.pricingAnnualAmount": "€270 / year",
+  "waitless.pricingAnnualDesc": "10% off the subscription when billed annually (vs €25 × 12). The €30 installation is separate, charged once.",
+  "waitless.footerTagline": "Live traffic for barbers & salons"
 }

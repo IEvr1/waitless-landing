@@ -77,6 +77,8 @@ export function WaitlessLanding({
     "waitless.owner.b6",
     "waitless.owner.b7",
   ];
+  const ownerNote = t("waitless.ownerNote", lang).trim();
+  const pricingAnnualDesc = t("waitless.pricingAnnualDesc", lang).trim();
 
   return (
     <div className="pb-8 sm:pb-12">
@@ -145,12 +147,14 @@ export function WaitlessLanding({
               </a>
             </div>
             <LandingMetricsStrip lang={lang} />
-            <p
-              data-hero-reveal
-              className="mt-10 max-w-2xl border-t border-white/10 pt-8 text-sm leading-relaxed text-emerald-100/80"
-            >
-              {t("waitless.ownerNote", lang)}
-            </p>
+            {ownerNote ? (
+              <p
+                data-hero-reveal
+                className="mt-10 max-w-2xl border-t border-white/10 pt-8 text-sm leading-relaxed text-emerald-100/80"
+              >
+                {ownerNote}
+              </p>
+            ) : null}
           </div>
         </LandingHeroReveal>
       </section>
@@ -254,12 +258,17 @@ export function WaitlessLanding({
               <span className="absolute right-4 top-4 rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold text-accent-foreground">
                 {t("waitless.pricingAnnualBadge", lang)}
               </span>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+              <p className="pr-24 text-xs font-semibold uppercase tracking-widest text-primary">
                 {t("waitless.pricingAnnualTitle", lang)}
               </p>
-              <p className="mt-6 pr-16 text-sm leading-relaxed text-muted-foreground">
-                {t("waitless.pricingAnnualDesc", lang)}
+              <p className="mt-3 text-3xl font-bold tabular-nums tracking-tight text-foreground">
+                {t("waitless.pricingAnnualAmount", lang)}
               </p>
+              {pricingAnnualDesc ? (
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {pricingAnnualDesc}
+                </p>
+              ) : null}
             </div>
           </div>
         </LandingSection>
@@ -298,9 +307,6 @@ export function WaitlessLanding({
         <footer className="mt-12 border-t border-border pt-10 text-center">
           <p className="text-sm font-medium text-foreground">
             {t("waitless.footerTagline", lang)}
-          </p>
-          <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-muted-foreground">
-            {t("waitless.footerTech", lang)}
           </p>
         </footer>
       </div>
