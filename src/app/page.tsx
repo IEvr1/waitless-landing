@@ -49,12 +49,6 @@ export default async function Home({
           aria-label={t("waitless.navAriaPrimary", lang)}
           className="flex shrink-0 items-center gap-3 sm:gap-4"
         >
-          <a
-            href="#timologisi"
-            className="whitespace-nowrap text-xs font-medium text-muted-foreground underline-offset-4 transition hover:text-foreground hover:underline sm:text-sm"
-          >
-            {t("waitless.sectionPricing", lang)}
-          </a>
           <Suspense fallback={null}>
             <LanguageSwitcher lang={lang} />
           </Suspense>

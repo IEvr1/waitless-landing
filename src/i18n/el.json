@@ -65,7 +65,7 @@
   "waitless.smart.p2": "Αν μείνει στο «πολύ γεμάτο», γυρίζει μόνο του μετά από λίγο ώστε να μην μείνει λάθος κόκκινο.",
   "waitless.sectionPricing": "Τιμολόγηση",
   "waitless.navAriaPrimary": "Κύρια πλοήγηση",
-  "waitless.pricingIntro": "Τιμές ανά κατάστημα. Μπορεί να προστεθεί ΦΠΑ ή άλλα τοπικά έξοδα.",
+  "waitless.pricingIntro": "Τιμές ανά κατάστημα. Οι τιμές δεν περιλαμβάνουν ΦΠΑ.",
   "waitless.pricingOneTimeTitle": "Εγκατάσταση",
   "waitless.pricingOneTimeAmount": "30 €",
   "waitless.pricingOneTimeDesc": "Μια φορά στην αρχή, ανά κατάστημα.",

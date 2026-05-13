@@ -65,7 +65,7 @@
   "waitless.smart.p2": "Automatic downgrade from “very busy” after a set time (production cron) so the board does not stay red forever by mistake.",
   "waitless.sectionPricing": "Pricing",
   "waitless.navAriaPrimary": "Primary navigation",
-  "waitless.pricingIntro": "Per shop. VAT and any local charges may apply.",
+  "waitless.pricingIntro": "Per shop. Prices do not include VAT.",
   "waitless.pricingOneTimeTitle": "Installation",
   "waitless.pricingOneTimeAmount": "€30",
   "waitless.pricingOneTimeDesc": "One-time setup fee per shop.",
