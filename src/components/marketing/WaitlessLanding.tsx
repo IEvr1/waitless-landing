@@ -26,6 +26,8 @@ function PillarCard({
   href: string;
   learnMore: string;
 }) {
+  const hasDescription = description.trim().length > 0;
+
   return (
     <a
       href={href}
@@ -38,9 +40,11 @@ function PillarCard({
       <h3 className="text-lg font-semibold tracking-tight text-foreground">
         {title}
       </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-        {description}
-      </p>
+      {hasDescription ? (
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+          {description}
+        </p>
+      ) : null}
       <span className="mt-4 text-sm font-semibold text-primary group-hover:underline">
         {learnMore}
       </span>
@@ -270,6 +274,20 @@ export function WaitlessLanding({
                 </p>
               ) : null}
             </div>
+          </div>
+        </LandingSection>
+
+        <LandingSection id="epikoinonia" title={t("waitless.sectionContact", lang)}>
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm ring-1 ring-emerald-950/[0.04] dark:ring-white/[0.06]">
+            <p className="text-base leading-relaxed text-muted-foreground">
+              {t("waitless.contactIntro", lang)}
+            </p>
+            <a
+              href="tel:+35794016866"
+              className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
+            >
+              {t("waitless.contactCall", lang)}
+            </a>
           </div>
         </LandingSection>
 

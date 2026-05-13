@@ -29,7 +29,7 @@
   "waitless.pillarCustomerBlurb": "Δημόσια σελίδα: κίνηση, ώρες, νέα από το κατάστημα.",
   "waitless.pillarOwnerBlurb": "Ιδιωτική οθόνη για τον ιδιοκτήτη — ένα πάτημα για την κίνηση.",
   "waitless.pillarWhyBlurb": "Ξεκάθαρα για όποιον έρχεται χωρίς ραντεβού.",
-  "waitless.pillarPricingBlurb": "30 € μια φορά στην αρχή, 25 € το μήνα ή 10% λιγότερα αν πληρώσεις όλο τον χρόνο μαζί.",
+  "waitless.pillarPricingBlurb": "",
   "waitless.heroSub": "Δεν κλείνεις ώρα εδώ. Βλέπεις απλά την εικόνα πριν φύγεις από το σπίτι.",
   "waitless.ctaDemo": "Δες πώς φαίνεται",
   "waitless.ownerNote": "",
@@ -76,5 +76,8 @@
   "waitless.pricingAnnualBadge": "Έκπτωση 10%",
   "waitless.pricingAnnualAmount": "270 € / έτος",
   "waitless.pricingAnnualDesc": "Χρέωση ανά έτος, ανά κατάστημα.",
+  "waitless.sectionContact": "Επικοινωνία",
+  "waitless.contactIntro": "Θέλετε να δείτε αν το Waitless ταιριάζει στο κατάστημά σας; Καλέστε μας για άμεση εξυπηρέτηση.",
+  "waitless.contactCall": "Καλέστε στο +357 94 016866",
   "waitless.footerTagline": "Ζωντανή εικόνα για κουρεία και κομμωτήρια"
 }

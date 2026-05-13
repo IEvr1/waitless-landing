@@ -76,5 +76,8 @@
   "waitless.pricingAnnualBadge": "10% off",
   "waitless.pricingAnnualAmount": "€270 / year",
   "waitless.pricingAnnualDesc": "10% off the subscription when billed annually (vs €25 × 12). The €30 installation is separate, charged once.",
+  "waitless.sectionContact": "Contact",
+  "waitless.contactIntro": "Want to see if Waitless fits your shop? Call us for quick help.",
+  "waitless.contactCall": "Call +357 94 016866",
   "waitless.footerTagline": "Live traffic for barbers & salons"
 }
