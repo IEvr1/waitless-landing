@@ -1,7 +1,31 @@
 import type { NextConfig } from "next";
 
+const legacyHosts = [
+  "waitless-landing.vercel.app",
+  "waitless-landing-evri-s-projects.vercel.app",
+  "waitless-landing-git-master-evri-s-projects.vercel.app",
+  "waitless-landing-mustrene-1355-evri-s-projects.vercel.app",
+];
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: "/shoptraffic",
+  async redirects() {
+    return [
+      ...legacyHosts.map((host) => ({
+        source: "/:path*",
+        has: [{ type: "host" as const, value: host }],
+        destination: "https://www.nexaipla.com/shoptraffic",
+        permanent: true as const,
+        basePath: false as const,
+      })),
+      {
+        source: "/",
+        destination: "/shoptraffic",
+        permanent: true,
+        basePath: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
