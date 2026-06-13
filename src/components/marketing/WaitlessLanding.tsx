@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/types";
+import Image from "next/image";
 import { t } from "@/lib/i18n";
 import { LandingHeroReveal } from "@/components/marketing/LandingHeroReveal";
 import { LandingMetricsStrip } from "@/components/marketing/LandingMetricsStrip";
@@ -282,12 +283,20 @@ export function WaitlessLanding({
             <p className="text-base leading-relaxed text-muted-foreground">
               {t("waitless.contactIntro", lang)}
             </p>
-            <a
-              href="tel:+35794016866"
-              className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
-            >
-              {t("waitless.contactCall", lang)}
-            </a>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="mailto:info@nexaipla.com"
+                className="inline-flex w-full items-center justify-center rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/35 hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
+              >
+                {t("waitless.contactEmail", lang)}
+              </a>
+              <a
+                href="tel:+35794016866"
+                className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
+              >
+                {t("waitless.contactCall", lang)}
+              </a>
+            </div>
           </div>
         </LandingSection>
 
@@ -323,9 +332,40 @@ export function WaitlessLanding({
         </section>
 
         <footer className="mt-12 border-t border-border pt-10 text-center">
-          <p className="text-sm font-medium text-foreground">
+          <a
+            href="https://www.nexaipla.com/shoptraffic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto inline-block transition opacity-90 hover:opacity-100"
+          >
+            <Image
+              src="/nexaipla-logo.png"
+              alt="NexAIpla"
+              width={140}
+              height={36}
+              className="mx-auto h-8 w-auto"
+            />
+          </a>
+          <p className="mt-4 text-sm font-medium text-foreground">
             {t("waitless.footerTagline", lang)}
           </p>
+          <div className="mt-5 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-4">
+            <a
+              href="mailto:info@nexaipla.com"
+              className="font-medium text-foreground transition hover:text-primary"
+            >
+              info@nexaipla.com
+            </a>
+            <span className="hidden text-border sm:inline" aria-hidden>
+              ·
+            </span>
+            <a
+              href="tel:+35794016866"
+              className="font-medium text-foreground transition hover:text-primary"
+            >
+              +357-94016866
+            </a>
+          </div>
         </footer>
       </div>
     </div>
