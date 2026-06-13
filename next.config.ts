@@ -12,18 +12,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...legacyHosts.map((host) => ({
-        source: "/:path*",
+        source: "/",
         has: [{ type: "host" as const, value: host }],
         destination: "https://www.nexaipla.com/shoptraffic",
         permanent: true as const,
         basePath: false as const,
       })),
-      {
-        source: "/",
-        destination: "/shoptraffic",
-        permanent: true,
-        basePath: false,
-      },
     ];
   },
 };
