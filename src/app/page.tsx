@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import Image from "next/image";
 import { Suspense } from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { WaitlessLanding } from "@/components/marketing/WaitlessLanding";
@@ -31,16 +32,27 @@ export default async function Home({
   return (
     <div className="mx-auto min-h-screen max-w-6xl px-4 pb-16 pt-4 sm:px-6 sm:pb-24 lg:px-10">
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-border pb-5">
-        <div className="flex min-w-0 items-center gap-3 sm:gap-3.5">
-          <span
-            className="size-3 shrink-0 rounded-full bg-primary sm:size-3.5"
-            aria-hidden
-          />
-          <div className="min-w-0">
-            <p className="truncate text-lg font-bold tracking-tight text-foreground sm:text-xl md:text-2xl">
+        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+          <a
+            href="https://www.nexaipla.com/shoptraffic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 transition opacity-90 hover:opacity-100"
+          >
+            <Image
+              src="/nexaipla-logo.png"
+              alt="NexAIpla"
+              width={160}
+              height={40}
+              priority
+              className="h-8 w-auto sm:h-9"
+            />
+          </a>
+          <div className="min-w-0 border-l border-border pl-3 sm:pl-4">
+            <p className="truncate text-base font-bold tracking-tight text-foreground sm:text-xl md:text-2xl">
               {t("app.title", lang)}
             </p>
-            <p className="hidden truncate text-sm leading-snug text-muted-foreground sm:block md:text-[0.9375rem]">
+            <p className="truncate text-xs leading-snug text-muted-foreground sm:text-sm md:text-[0.9375rem]">
               {t("app.tagline", lang)}
             </p>
           </div>
